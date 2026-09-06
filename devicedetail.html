@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Device details — Reloop</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: start;
+    }
+    #device-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    #device-gallery img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+    }
+    .detail-noimg {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      color: var(--ink-soft);
+    }
+    .detail-meta { display: flex; align-items: center; gap: 10px; margin: 10px 0 18px; }
+    #device-title { font-size: 26px; font-weight: 600; letter-spacing: -0.01em; margin: 0; }
+    #device-price { font-size: 22px; font-weight: 600; margin: 4px 0 20px; }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .panel h3 { margin: 0 0 16px; font-size: 16px; font-weight: 600; }
+    .bid-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      gap: 12px;
+    }
+    .bid-row:last-child { border-bottom: none; }
+    .bid-amount { margin-left: 10px; font-weight: 600; color: var(--accent); }
+    .bid-message { margin: 4px 0 0; font-size: 13px; color: var(--ink-soft); }
+    .bid-row-right { display: flex; align-items: center; gap: 10px; }
+    .bid-status {
+      font-size: 12px;
+      padding: 3px 9px;
+      border-radius: 980px;
+      background: var(--bg);
+      color: var(--ink-soft);
+      text-transform: capitalize;
+    }
+    .bid-status-accepted { background: rgba(30,142,62,0.1); color: var(--success); }
+    .bid-status-rejected { background: rgba(217,48,37,0.08); color: var(--danger); }
+    .btn-sm { padding: 7px 14px; font-size: 13px; }
+    .bid-empty, .bid-box-note { color: var(--ink-soft); font-size: 14px; }
+    @media (max-width: 860px) { .detail-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-brand">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C9 2 7 4.5 7 7.5c0 4 5 12.5 5 12.5s5-8.5 5-12.5C17 4.5 15 2 12 2Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="7.5" r="2" stroke="currentColor" stroke-width="1.6"/></svg>
+        Reloop
+      </a>
+      <div class="nav-links">
+        <a href="devices.html">Browse devices</a>
+        <a href="add-device.html">List a device</a>
+      </div>
+      <div class="nav-cta">
+        <button id="logout-btn" class="btn btn-ghost">Log out</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="section">
+    <div class="wrap" id="device-detail">
+      <div class="detail-grid">
+        <div>
+          <div id="device-gallery"></div>
+        </div>
+        <div>
+          <span class="tile-tag" id="device-type">Device</span>
+          <h1 id="device-title">Loading…</h1>
+          <div class="detail-meta">
+            <span id="device-condition" class="device-card-status"></span>
+            <span id="device-status" class="device-card-status"></span>
+          </div>
+          <div id="device-price"></div>
+          <p id="device-description" style="color:var(--ink-soft); line-height:1.6;"></p>
+
+          <div class="panel">
+            <h3>Place a bid</h3>
+            <div id="bid-box"></div>
+          </div>
+
+          <div class="panel">
+            <h3>Current bids</h3>
+            <div id="bid-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/devices.js"></script>
+  <script src="js/bidding.js"></script>
+</body>
+</html>
