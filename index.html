@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reloop — Sell, trade &amp; repair your Apple devices</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-brand">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C9 2 7 4.5 7 7.5c0 4 5 12.5 5 12.5s5-8.5 5-12.5C17 4.5 15 2 12 2Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="7.5" r="2" stroke="currentColor" stroke-width="1.6"/></svg>
+        Reloop
+      </a>
+      <div class="nav-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#sell">Sell a device</a>
+        <a href="#repair">Repair</a>
+        <a href="#vendors">For vendors</a>
+      </div>
+      <div class="nav-cta">
+        <a href="login.html" class="btn btn-ghost" data-guest-only>Log in</a>
+        <a href="signup.html" class="btn btn-primary" data-guest-only>Get started</a>
+        <a href="dashboard.html" class="btn btn-ghost" data-user-only style="display:none">Dashboard</a>
+        <button id="logout-btn" class="btn btn-primary" data-user-only style="display:none">Log out</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <div class="hero-eyebrow">A marketplace built around one thing: Apple devices</div>
+        <h1>Sell, trade, or repair your Apple gear — without the guesswork.</h1>
+        <p>List your iPhone, MacBook, iPad, or AirPods in minutes. Vetted vendors bid in real time, and every repair comes from a verified shop with upfront pricing.</p>
+        <div class="hero-actions">
+          <a href="signup.html" class="btn btn-primary">List a device</a>
+          <a href="signup.html" class="btn btn-ghost" style="border-color:#3A3B3F; color:#fff;">Join as a vendor</a>
+        </div>
+        <div class="hero-trust">
+          <span>Verified vendors only</span>
+          <span>Live bidding</span>
+          <span>Repair pricing upfront</span>
+        </div>
+      </div>
+      <div class="device-art">
+        <svg viewBox="0 0 320 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="20" width="150" height="300" rx="22" stroke="#3A3B3F" stroke-width="2"/>
+          <rect x="52" y="42" width="126" height="234" rx="4" fill="#1A1B1E"/>
+          <circle cx="115" cy="292" r="10" stroke="#3A3B3F" stroke-width="2"/>
+          <rect x="170" y="120" width="110" height="80" rx="10" stroke="#3A3B3F" stroke-width="2" fill="#0F1012"/>
+          <path d="M190 150h70M190 165h50" stroke="#3A3B3F" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="255" cy="255" r="26" stroke="#2F6FED" stroke-width="2"/>
+          <circle cx="255" cy="255" r="4" fill="#2F6FED"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="how-it-works">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>Three steps, whether you're clearing out an old iPhone or sourcing inventory as a vendor.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>List or browse</h3>
+          <p>Add photos, condition, and asking price — or browse live listings if you're a vendor.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Bid or accept</h3>
+          <p>Vendors place bids in real time. You choose the offer that works, or set a minimum.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Hand off &amp; get paid</h3>
+          <p>Meet up or ship, confirm the device, and the transaction closes in the platform.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sell" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Built for both sides of the trade</h2>
+        <p>One platform, three roles — sellers, vendors, and a repair network in between.</p>
+      </div>
+      <div class="grid-3">
+        <div class="tile">
+          <span class="tile-tag">For sellers</span>
+          <h3>List in minutes</h3>
+          <p>Upload photos and condition details, then watch offers come in from approved vendors.</p>
+        </div>
+        <div class="tile" id="vendors">
+          <span class="tile-tag">For vendors</span>
+          <h3>Bid on real inventory</h3>
+          <p>Browse live listings, place bids, and manage everything you've won from one inventory view.</p>
+        </div>
+        <div class="tile" id="repair">
+          <span class="tile-tag">Repair network</span>
+          <h3>Upfront repair pricing</h3>
+          <p>Vendors list repair services with clear pricing and turnaround, so there's no back-and-forth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Ready to see what your device is worth?</h2>
+          <p>Create a free account and get your first listing live today.</p>
+        </div>
+        <a href="signup.html" class="btn btn-primary">Create account</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Reloop. Not affiliated with Apple Inc.</span>
+      <span>Verified vendors · Secure transactions</span>
+    </div>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
